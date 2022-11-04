@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nameDev');
             $table->string('surnameDev');
-            $table->string('teamMember');
+            $table->string('teamMember')->nullable();
         });
     }
 

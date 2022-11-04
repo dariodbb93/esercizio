@@ -1,0 +1,99 @@
+.texture {
+    background-image: url('texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.bordo {
+    border: solid 1px black;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+    opacity: 0.75;
+
+}
+
+
+.cardBackground {
+    background-color: #b8c7c8b0;
+    opacity: 0.75;
+}
+
+.headerBackground{
+    background-color: #DAD0D7;
+}
+
+.footerBackground{
+    background-color: #065c5cc2;
+    opacity: 0.7;
+}
+
+.backgroundContainer{
+    background-color:#dad0d79c
+}
+
+.navBackground{
+    background-color: #b8c7c8;
+}
+
+.noSpace{
+    padding:0;
+    margin:0;
+
+}
+
+
+ /* Dark-Mode */
+
+.textureDark{
+
+    background-image: url('textureTransparent.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.507);
+
+}
+
+
+.cardBackgroundDark {
+    background-color: rgba(0, 0, 0, 0.76);
+    opacity: 0.75;
+}
+
+.headerBackgroundDark{
+    background-color: rgba(0, 0, 0, 0.76);
+}
+
+.footerBackgroundDark{
+    background-color: rgba(0, 0, 0, 0.76);
+}
+
+.backgroundContainerDark{
+    background-color: rgba(0, 0, 0, 0.76);
+}
+
+.navBackgroundDark{
+    background-color: rgba(0, 0, 0, 0.76);
+    opacity: 0.7;
+}
+
+
+.headerDark{
+    color:white;
+
+}
+
+.footerText{
+    color: white;
+
+}
+
+.iconText{
+    color: white;
+
+}

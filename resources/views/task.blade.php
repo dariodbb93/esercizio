@@ -31,9 +31,9 @@
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="status"
                         required>
 
-                        <option value="1"> in attesa </option>
-                        <option value="2"> in corso </option>
-                        <option value="3"> completato </option>
+                        <option value="in attesa"> in attesa </option>
+                        <option value="in corso"> in corso </option>
+                        <option value="completato"> completato </option>
                     </select>
 
                     {{-- in attesa, in corso, completato --}}

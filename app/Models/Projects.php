@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Task;
 use App\Models\Team;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,7 +20,10 @@ class Projects extends Model
 
     }
 
+    public function task(){
 
+        return $this->hasMany(Task::class);
+    }
 
 
 

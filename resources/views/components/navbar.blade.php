@@ -24,6 +24,12 @@
                 <li class="nav-item">
                     <a class="btn btn-light mx-1 px-2 my-1" href="{{ route('showProjects') }}"> Mostra i progetti attivi </a>
                 </li>
+                <li class="nav-item">
+                    <a class="btn btn-light mx-1 px-2 my-1" href="{{ route('task') }}"> Inserisci un nuovo task </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-light mx-1 px-2 my-1" href="{{ route('showTask') }}"> Visualizza i task </a>
+                </li>
             </ul>
         </div>
     </div>

@@ -31,3 +31,6 @@ Route::get('/showProjects', [PublicController:: class, 'showProjects'])->name('s
 Route::get('/editP/{project}', [PublicController:: class, 'editP'])->name('editP');
 Route::put('/updateProject/{project}', [PublicController:: class, 'updateProject'])->name('updateProject');
 Route::delete('/destroyP/{project}', [PublicController:: class, 'destroyP'])->name('destroyP');
+Route::get('/task', [PublicController:: class, 'task'])->name('task');
+Route::post('/storeTask', [PublicController:: class, 'storeTask'])->name('storeTask');
+Route::get('/showTask', [PublicController:: class, 'showTask'])->name('showTask');

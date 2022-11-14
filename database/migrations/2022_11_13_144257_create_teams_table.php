@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('teams', function (Blueprint $table) {
-          $table->unsignedBigInteger('admin_id')->after('teamMember')->nullable();
-          $table->foreign('admin_id')->references('id')->on('admins');
-            
+        Schema::create('teams', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('teamMember')->unique();
         });
     }
 
@@ -27,9 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('teams', function (Blueprint $table) {
-            $table->dropForeign(['admin_id']);
-            $table->dropColumn('admin_id');
-        });
+        Schema::dropIfExists('teams');
     }
 };

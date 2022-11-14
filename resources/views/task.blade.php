@@ -22,12 +22,14 @@
                         <label class="form-label fw-bolder"> Descrizione del task </label>
                         <input type="text" class="form-control" name="taskDescription" required>
                     </div>
+                    <label class="form-label fw-bolder"> Progetto collegato </label>
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="nameProject"
                         required>
                         @foreach ($projects as $project)
-                            <option value="{{ $project->id }}"> "{{ $project->nameProject }}" </option>
+                            <option value="{{ $project->id }}"> {{ $project->nameProject }} </option>
                         @endforeach
                     </select>
+                    <label class="form-label fw-bolder"> Stato del task </label>
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="status"
                         required>
 
@@ -38,7 +40,7 @@
 
                     {{-- in attesa, in corso, completato --}}
 
-                    <button type="submit" class="btn btn-dark"> Conferma </button>
+                    <button type="submit" class="btn btn-dark mt-4"> Conferma </button>
                 </form>
 
             </div>

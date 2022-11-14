@@ -13,8 +13,8 @@ use App\Http\Controllers\PublicController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [PublicController:: class, 'welcome'])->name('welcome');
+Route::get('/home', [PublicController:: class, 'home'])->name('home');
 Route::get('/showAdmins', [PublicController:: class, 'showAdmins'])->name('showAdmins');
 Route::post('/storeAdmin', [PublicController::class, "storeAdmin"])->name("storeAdmin");
 Route::post('/storeTeam', [PublicController:: class, 'storeTeam'])->name('storeTeam');
@@ -34,3 +34,4 @@ Route::delete('/destroyP/{project}', [PublicController:: class, 'destroyP'])->na
 Route::get('/task', [PublicController:: class, 'task'])->name('task');
 Route::post('/storeTask', [PublicController:: class, 'storeTask'])->name('storeTask');
 Route::get('/showTask', [PublicController:: class, 'showTask'])->name('showTask');
+Route::get('/indexProject', [PublicController:: class, 'indexProject'])->name('indexProject');

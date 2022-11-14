@@ -26,6 +26,10 @@
                         <label class="form-label fw-bolder"> Data di scadenza </label>
                         <input type="date" class="form-control" name="dateExipiration" required>
                     </div>
+
+
+                    <label class="form-label fw-bolder"> Seleziona team a cui assegnare il progetto </label>
+
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="colore"
                         required>
                         @foreach ($teams as $team)
@@ -33,10 +37,7 @@
                         @endforeach
                     </select>
 
-
-
-
-                    <button type="submit" class="btn btn-dark"> Conferma </button>
+                    <button type="submit" class="btn btn-dark mt-4"> Conferma </button>
                 </form>
 
             </div>

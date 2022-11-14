@@ -3,15 +3,6 @@
         <div class="row justify-content-center">
             <div class="col-12 text-center">
                 <h1>Creazione del nuovo sviluppatore (DEV) </h1>
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
                 <form action="{{ route('storeDev') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
@@ -25,12 +16,25 @@
                     <div class="mb-3">
                         <label class="form-label fw-bolder"> Nome del team </label>
 
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example"
-                            name="colore" required>
-                            @foreach($teams as $team)
-                            <option value="{{$team->id}}"> {{$team->teamMember}} </option>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="colore"
+                            required>
+                            @foreach ($admins as $admin)
+                                <option value="{{ $admin->team->id }}"> {{ $admin->team->teamMember }} </option>
                             @endforeach
                         </select>
+
+
+                        <label class="form-label fw-bolder"> Responsabile del team </label>
+
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="admin_id"
+                            required>
+                            @foreach ($admins as $admin)
+                                    <option value="{{ $admin->id }}" > {{ $admin->name }} {{ $admin->surname }}
+                                    </option>
+
+                            @endforeach
+                        </select>
+
                     </div>
                     <button type="submit" class="btn btn-dark"> Conferma </button>
                 </form>
@@ -38,3 +42,17 @@
         </div>
     </div>
 </x-layout>
+
+
+
+{{-- <select name="category_id">
+    <option value="1"  {{ old('category_id') == 1 ? 'selected' : '' }}>
+        Item 1
+    </option>
+    <option value="2" {{ old('category_id') == 2 ? 'selected' : '' }}>
+        Item 2
+    </option>
+    <option value="3" {{ old('category_id') == 3 ? 'selected' : '' }}>
+        Item 3
+    </option>
+</select> --}}

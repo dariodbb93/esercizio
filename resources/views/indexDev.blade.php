@@ -20,8 +20,8 @@
                                 <td> {{ $dev->nameDev }} </td>
                                 <td> {{ $dev->surnameDev }} </td>
                                 <td> {{ $dev->team->teamMember }} </td>
-                                <td> {{ $dev->team->admin->surname }} </td>
-                                <td> <a href="{{ route('edit', compact('dev')) }}" class="btn btn-dark mt-1">Modifica i
+                                <td> {{ $dev->admin->name }}  {{ $dev->admin->surname  }}</td>
+                                <td> <a href="{{ route('edit', compact('dev')) }}" class="btn btn-dark">Modifica i
                                         dati
                                         anagrafici dello sviluppatore </a> </td>
                                 <td>

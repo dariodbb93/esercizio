@@ -14,27 +14,51 @@ use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 class PublicController extends Controller
+
+
 {
-    public function welcome()
+
+public function welcome(){
+
+
+    return view ('home');
+}
+
+
+
+
+    public function home()
     {
-        return view('welcome');
+        return view('home');
     }
 
-    public function storeAdmin(Request $request)
+    public function storeTeam(Request $request)   //creazione del colore del team
     {
-        $admin = Admin::create([
-            'name' => $request->input('name'),
-            'surname' => $request->input('surname')
+        $team = Team::create([
+            'teamMember' => $request->input('teamMember')
         ]);
 
         return redirect(route('welcome'));
     }
 
+
     public function showAdmins()
     {
 
-        $admins = Admin::all();
-        return view('team', compact('admins'));
+        $teams = Team::all();
+        return view('team', compact('teams'));
+    }
+
+    public function storeAdmin(Request $request)    // creazione del CEO
+    {
+        $admin = Admin::create([
+            'name' => $request->input('name'),
+            'surname' => $request->input('surname'),
+            'team_id' => $request->input('team_id')
+
+        ]);
+
+        return redirect(route('welcome'));
     }
 
 
@@ -42,30 +66,13 @@ class PublicController extends Controller
     public function showTeam()
     {
 
+        $admins = Admin::all();
         $teams = Team::all();
-        return view('dev', compact('teams'));
+        return view('dev', compact('teams'), compact('admins'));
     }
 
 
 
-
-    public function storeTeam(Request $request)
-    {
-
-
-
-        // $admin = Admin::find( $request->input('ceo'));
-
-        $team = Team::create([
-            'teamMember' => $request->input('teamMember'),
-            'admin_id' =>  $request->input('ceo'),
-
-
-
-        ]);
-
-        return redirect(route('welcome'));
-    }
 
 
 
@@ -76,7 +83,7 @@ class PublicController extends Controller
             'nameDev' => $request->input('nameDev'),
             'surnameDev' => $request->input('surnameDev'),
             'team_id' => $request->input('colore'),
-
+            'admin_id' => $request->input('admin_id')
 
         ]);
 
@@ -137,8 +144,11 @@ class PublicController extends Controller
 
     public function projects()
     {
+       
+       
+       $admins = Admin::all();
         $teams = Team::all();
-        return view('projects', compact('teams'));
+        return view('projects', compact('teams'), compact('admins'));
     }
 
 
@@ -224,14 +234,13 @@ class PublicController extends Controller
             // 'nameProject' => $request->input('nameProject'),
             'status' => $request->input('status'),
             // 'admin' => $request->input('admin')
-            'project_id'=> $request->input('nameProject')
+            'project_id' => $request->input('nameProject')
 
 
 
         ]);
 
         return redirect(route('welcome'));
-
     }
 
 
@@ -244,9 +253,19 @@ class PublicController extends Controller
     }
 
 
+    public function indexProject(){
+
+        $projects = Projects::all();
 
 
 
+        return view('indexProject', compact('projects'));
+
+
+
+
+
+    }
 
 
 

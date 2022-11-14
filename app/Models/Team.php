@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Models\Projects;
 use App\Models\dev;
 use Illuminate\Database\Eloquent\Model;
@@ -12,33 +13,25 @@ use App\Models\Admin;
 class Team extends Model
 {
     use HasFactory;
-    protected $fillable = ['ceo', 'teamMember', 'admin_id'];
+    protected $fillable = ['ceo', 'teamMember'];
 
-// funzione di relazione tra il modello  team ed il modello dev one to many //
+    // funzione di relazione tra il modello  team ed il modello dev one to many //
 
 
-    public function devs(){
+    public function devs()
+    {
 
-        return $this->hasMany(dev::class);
+        return $this->hasMany(dev::class, 'team_id', 'id');
     }
 
 
-    public function admin(){
-        return $this->belongsTo(Admin::class, 'admin_id', 'id');
-    
+    public function admin()
+    {
+        return $this->hasOne(Admin::class, 'admin_id', 'id');
     }
 
-    public function projects(){
-
+    public function projects()
+    {
         return $this->hasMany(Project::class);
     }
-
-
-
-
-
-
 }
-
-
-

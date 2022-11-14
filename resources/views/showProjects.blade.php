@@ -22,16 +22,16 @@
                                 <td> {{ $project->aboutProject }} </td>
                                 <td> {{ $project->dateExipiration }} </td>
                                 <td> {{ $project->team->teamMember }} </td>
-                                <td> <a href="{{ route('editP', compact('project')) }}" class="btn btn-dark mt-1">
+                                <td> <a href="{{ route('updateProject', compact('project')) }}" class="btn btn-dark">
                                         Modifica il nome del progetto </a> </td>
                                 <td>
                                     <form action="{{ route('destroyP', compact('project')) }}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger mt-1" type="submit"> Cancella il progetto
+                                        <button class="btn btn-danger" type="submit"> Cancella il progetto
                                         </button>
-                                    </form>
-                                </td>
+                                    </form> 
+                            </td>
                             </tr>
                         @endforeach
 
